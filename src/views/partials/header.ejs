@@ -3,33 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>DH movies</title>
+    <style>
+        a{
+            color: aliceblue;
+        }
+
+        .fondo{
+            background-color: rgb(204, 204, 204);
+        }
+
+        .texto-p{
+            color: rgb(70, 70, 70);
+        }
+
+        .texto-black{
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienbenido a DH movies!</h1>
-        <ul class="navmenu">
-            <li>
+        <div class="container-fluid bg-danger py-5">
+            <div class="container text-white">
+                <h1>Bienbenido a DH movies!</h1>
                 <a href="/movies"> Todas las peliculas </a>
-            </li>
-            <li>
-                <a href="/movies/new"> Nuevas </a>
-            </li>
-            <li>
-                <a href="/movies/recommended"> Recomendadas </a>
-            </li>
-            <li>
-                <a href="/movies/create"> Crear pelicula </a>
-            </li>
-            <li>
-                <a href="/movies/actors"> Lista de actores </a>
-            </li>
-            <li>
-                <form action="/movies/search" method="POST">
-                    <input type="text" placeholder="Buscar peliculas" name="busqueda">
-                    <button type="submit">BUSCAR</button>
+
+                <form action="/movies/search" method="POST" class="row" >
+                    <input type="text" placeholder="Buscar peliculas" class="col-9" name="busqueda">
+                    <button type="submit" class="col-3">BUSCAR</button>
                 </form>
-            </li>
-        </ul>
+            </div>
+
+        </div>
+        <div class="container-fluid bg-warning">
+            <div class="container">
+                <div class="row py-4">
+                    <a href="/movies/new" class="col-3 h3"> Nuevas </a>
+                    
+                    <a href="/movies/recommended" class="col-3 h3"> Recomendadas </a>
+                    
+                    <a href="/movies/create" class="col-3 h3"> Crear pelicula </a>
+                    
+                    <a href="/movies/actors" class="col-3 h3"> Lista de actores </a>
+                    
+                </div>
+            </div>
+        </div>
     </header>
+    <main class="container">
