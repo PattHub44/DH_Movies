@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>DH movies</title>
+</head>
+<body>
+    <header>
+        <h1>Bienbenido a DH movies!</h1>
+        <ul class="navmenu">
+            <li>
+                <a href="/movies"> Todas las peliculas </a>
+            </li>
+            <li>
+                <a href="/movies/new"> Nuevas </a>
+            </li>
+            <li>
+                <a href="/movies/recommended"> Recomendadas </a>
+            </li>
+            <li>
+                <a href="/movies/create"> Crear pelicula </a>
+            </li>
+            <li>
+                <a href="/movies/actors"> Lista de actores </a>
+            </li>
+            <li>
+                <form action="/movies/search" method="POST">
+                    <input type="text" placeholder="Buscar peliculas" name="busqueda">
+                    <button type="submit">BUSCAR</button>
+                </form>
+            </li>
+        </ul>
+    </header>

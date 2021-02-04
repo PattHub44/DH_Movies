@@ -1,0 +1,50 @@
+<%-include('partials/header') %> 
+    
+    <h2>Editar pelicula</h2>
+
+        <form action="/movies/edit/<%= movie.id %> " method="POST">
+
+            <label for="">Titulo de la pelicula:</label>
+            <input type="text" name="titulo" value="<%= movie.title %> ">
+            <br>
+
+            <label for="">Rating (0 - 10)</label>
+            <input type="number" name="rating" min="0" max="10" step="0.1" value="<%= movie.rating %>">
+            <br>
+
+            <label for="">Premios gandos</label>
+            <input type="number" name="premios" min="0" value="<%= movie.awards %>">
+            <br>
+
+            <p>Debido a politicas de la pagina, la fehca de estreno no esta disponible para su edición</p>
+
+            <!--
+            <label for="">Fecha de lanzamiento</label>
+            <input type="date" name="lanzamiento" value="<%= movie.release_date %> ">
+            <br>
+            -->
+
+            <label for="">Duración de la peliculla</label>
+            <input type="text" name="duracion" value="<%= movie.length %> ">
+            <br>
+
+            <label for="">Genero de la pelicula</label>
+            <select name="genero">
+                <% genres.forEach( e => { %>
+                    <% if (e.id == movie.genres.id) {%>
+
+                        <option value="<%= e.id %>" selected="selected"><%= e.name %> </option>
+
+                    <% } else {%>
+
+                 <option value="<%= e.id %>"><%= e.name %> </option>
+
+                <%} }) %>
+            </select>
+            <br>
+            <button type="submit">Actualizar</button>
+
+        </form>
+        
+
+<%-include('partials/footer') %> 

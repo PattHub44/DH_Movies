@@ -1,0 +1,31 @@
+<%-include('partials/header') %> 
+    
+ <h2>Detalle de pelicula</h2>
+        
+        <article class="pelicula">
+            <h3> <%=movie.title%> </h3>
+            <p>rating: <%=movie.rating%> </p>
+            <p>premios: <%=movie.awards%> </p>
+            <p>duracion: <%=movie.length%> </p>
+            <p>fecha de lanzamiento: <%=movie.release_date%> </p>
+            <% if( movie.genres != null){ %>
+            <p>genero: <%=movie.genres.name%> </p>
+            <% } %> 
+        </article>
+
+        <article>
+            <h3>Actores:</h3>
+            <ul>
+                <% movie.actors.forEach(e => { %>
+                    <li><%= e.first_name %> <%= e.last_name %></li>    
+                <%})%>
+            </ul>
+        </article>
+
+        <a href="/movies/edit/<%= movie.id %> ">EDITAR</a>
+
+        <form action="/movies/delete/<%= movie.id %>" method="POST">
+            <button type="submit">BORRAR</button>
+        </form>
+
+<%-include('partials/footer') %> 

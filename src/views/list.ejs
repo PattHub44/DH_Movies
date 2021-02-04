@@ -1,0 +1,18 @@
+<%-include('partials/header') %> 
+    
+ <h2><%= list %> </h2>
+    <% movies.forEach(e => { %>
+        
+        <article class="pelicula">
+            <h3> <a href="/movies/detail/<%= e.id %> "><%=e.title%></a> </h3>
+            <p>rating: <%=e.rating%> </p>
+            <p>premios: <%=e.awards%> </p>
+            <p>duracion: <%=e.length%> </p>
+            <p>fecha de lanzamiento: <%=e.release_date%> </p>
+            <% if( e.genres != null){ %>
+            <p>genero: <%=e.genres.name%> </p>
+            <% } %> 
+        </article>
+        
+    <%})%>
+<%-include('partials/footer') %> 

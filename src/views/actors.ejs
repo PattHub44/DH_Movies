@@ -1,0 +1,11 @@
+<%-include('partials/header') %> 
+    
+<h2>Listado de actores</h2>
+    <ul>
+        <% actors.forEach(e => { %>
+        
+            <li><%= e.first_name %> <%= e.last_name %></li>
+            
+        <%})%>
+    </ul>
+<%-include('partials/footer') %> 
